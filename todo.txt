@@ -1,3 +1,0 @@
-1. load cup model and plate model with mesh
-2. object detection with cup and plate model
-3. grab object with different way.
