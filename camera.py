@@ -1,6 +1,7 @@
 import pybullet as p
-
+import pybullet_data
 import numpy as np
+
 
 def setup_and_capture_image(camera_eye_position, camera_target_position, camera_up_vector, width=640, height=480, fov=60, aspect=1.0, near=0.02, far=5):
     """
@@ -23,7 +24,9 @@ def setup_and_capture_image(camera_eye_position, camera_target_position, camera_
     
     # Capture an image from the simulation
     img_arr = p.getCameraImage(width, height, viewMatrix=view_matrix, projectionMatrix=projection_matrix)
+    
     # Extract the RGB part of the image
     rgb = img_arr[2]
     rgb_image = np.reshape(rgb, (height, width, 4))
+    
     return rgb_image
