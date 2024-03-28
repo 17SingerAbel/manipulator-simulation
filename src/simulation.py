@@ -33,7 +33,7 @@ class RobotSimulator:
 
         # Sphere
         sphere_start_pos = [-0.2, 0, 0.7]
-        sphere_id = p.loadURDF("sphere_small.urdf", sphere_start_pos)
+        sphere_id = p.loadURDF("/cup.urdf", sphere_start_pos)
 
         return robot_id, cube_id, sphere_id
 
