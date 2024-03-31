@@ -31,7 +31,7 @@ class RobotSimulator:
         cube_start_pos = [0.2, 0, 0.7]
         cube_id = p.loadURDF("cube_small.urdf", cube_start_pos)
 
-        # Sphere
+        # Sphere / cup
         sphere_start_pos = [-0.2, 0, 0.7]
         sphere_id = p.loadURDF("/cup/cup_small.urdf", sphere_start_pos)
 
@@ -80,13 +80,13 @@ def run_simulation():
     p.stepSimulation()
     time.sleep(1./240.)
     camera_image = setup_and_capture_image(
-                            camera_eye_position=[0, 2, 1.6],
+                            camera_eye_position=[0, 0.8, 1.6],
                             camera_target_position=[0, 0, 0],
                             camera_up_vector=[0, 0, 1]
                         )
 
     image = camera_image[:, :, :3]
-    print(image.shape)
+
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     image_object_detection(image)
     # try:
